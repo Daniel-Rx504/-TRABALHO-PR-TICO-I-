@@ -1,0 +1,131 @@
+#include <stdio.h>
+#include <math.h>
+
+    void soma() {
+        float a, b;
+        
+        printf("Digite os dois números: ");
+        scanf("%f %f", &a, &b);
+        
+        printf("Resultado: %.2f\n", a + b);
+    }
+    
+    void subtracao() {
+        float a, b;
+        
+        printf("Digite os dois números: ");
+        scanf("%f %f", &a, &b);
+        
+        printf("Resultado: %.2f\n", a - b);
+    }
+    
+    void multiplicacao() {
+        float a, b;
+        
+        printf("Digite os dois números: ");
+        scanf("%f %f", &a, &b);
+        
+        printf("Resultado: %.2f\n", a * b);
+    }
+    
+    void divisao() {
+        float a, b;
+    
+        printf("Digite os dois números: ");
+        scanf("%f %f", &a, &b);
+        
+        if (b != 0) {
+            printf("Resultado: %.2f\n", a / b);
+        } else {
+            printf("Erro: Divisão por zero!\n");
+        }
+    }
+    
+    void exponenciacao() {
+        float base, expoente;
+        
+        printf("Digite a base e o expoente: ");
+        scanf("%f %f", &base, &expoente);
+        
+        printf("Resultado: \n", pow(base, expoente));
+    }
+    
+    void raizQuadrada() {
+        float numero;
+    
+        printf("Digite o número: ");
+        scanf("%f", &numero);
+        
+        if (numero >= 0) {
+            printf("Resultado: %.2f\n", sqrt(numero));
+        } else {
+            printf("Erro: Número negativo!\n");
+        }
+    }
+    
+    void modulo() {
+        int a, b;
+        
+        printf("Digite os dois números inteiros: ");
+        scanf("%d %d", &a, &b);
+    
+        if (b != 0) {
+            printf("Resultado: %d\n", a % b);
+        } else {
+            printf("Erro: Divisão por zero\n");
+        }
+    }
+    
+    void bhaskara() {
+        float a, b, c, delta, raiz1, raiz2;
+        
+        printf("Digite os valores de a, b e c: ");
+        scanf("%f %f %f", &a, &b, &c);
+        
+        delta = b * b - 4 * a * c;
+        if (delta < 0) {
+            printf("As raízes são complexas.\n");
+        } else {
+            raiz1 = (-b + sqrt(delta)) / (2 * a);
+            raiz2 = (-b - sqrt(delta)) / (2 * a);
+            
+            printf("Raízes: %.2f e %.2f\n", raiz1, raiz2);
+        }
+    }
+
+int main() {
+    int opcao;
+    do {
+        printf("\n---------------------------------\n");
+        printf("----------- Calculadora -----------\n");
+        printf("-----------------------------------\n");
+        printf("\n");
+        printf("1. + Soma \n");
+        printf("2. - Subtração\n");
+        printf("3. * Multiplicação\n");
+        printf("4. / Divisão\n");
+        printf("5.  Exponenciação\n");
+        printf("6. √ Raiz Quadrada\n");
+        printf("7. |x| Módulo\n");
+        printf("8.  δ Bhaskara\n");
+        printf("0. X Sair\n");
+        printf("\n");
+        printf("Escolha uma operação: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1: soma(); break;
+            case 2: subtracao(); break;
+            case 3: multiplicacao(); break;
+            case 4: divisao(); break;
+            case 5: exponenciacao(); break;
+            case 6: raizQuadrada(); break;
+            case 7: modulo(); break;
+            case 8: bhaskara(); break;
+            case 0: printf("Desligando...\n"); break;
+            default: printf("Opção  ! \n");
+        }
+    } while (opcao != 0);
+
+    return 0;
+}
